@@ -1,7 +1,8 @@
 public class BaccaratHand{
     // max amount of cards in hand is 3
     private BaccaratCard[] hand = new BaccaratCard[3];
-    private int cardCount = 0; //keeps track of current end of array
+    // keeps track of current end of array
+    private int cardCount = 0;
 
     public int size() {
         return cardCount;

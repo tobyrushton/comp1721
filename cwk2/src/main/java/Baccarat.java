@@ -18,7 +18,8 @@ public class Baccarat {
     Baccarat game = new Baccarat();
     boolean running = true;
     Scanner scanner = new Scanner(System.in);
-    boolean interacive = args.length > 0 && (args[0].equals("-i") || args[0].equals("--interactive"));
+    boolean interacive = args.length > 0 && 
+      (args[0].equals("-i") || args[0].equals("--interactive"));
 
     while(running) {
       game.dealNewRound();
@@ -90,7 +91,8 @@ public class Baccarat {
   }
 
   public void evaluateRound() {
-    boolean playerNatural = player.isNatural(), bankerNatural = banker.isNatural();
+    boolean playerNatural = player.isNatural();
+    boolean bankerNatural = banker.isNatural();
 
     if (playerNatural && bankerNatural) {
       ties++;
@@ -102,7 +104,10 @@ public class Baccarat {
       bankerWins++;
       System.out.println("Banker win!");
     } else {
-      int playerValue = player.value(), bankerValue = banker.value(), playerThirdCard = -1, bankerThirdCard = -1;
+      int playerValue = player.value();
+      int bankerValue = banker.value();
+      int playerThirdCard = -1;
+      int bankerThirdCard = -1;
 
       
       if(playerValue < 6) {
