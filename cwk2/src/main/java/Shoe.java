@@ -28,16 +28,14 @@ public class Shoe {
     }
 
     public void shuffle() {
-        Card[] temp = new Card[deck.length];
-
         Random rand = new Random();
 
         for(int i = 0; i < deck.length; i++) {
             int randomIndexToSwap = rand.nextInt(deck.length);
-            temp[randomIndexToSwap] = deck[i];
+            Card temp = deck[randomIndexToSwap];
+            deck[randomIndexToSwap] = deck[i];
+            deck[i] = temp;
         }
-
-        deck = temp;
     }
 
     public Card deal() {

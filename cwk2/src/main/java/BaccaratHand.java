@@ -8,8 +8,7 @@ public class BaccaratHand{
     }
 
     public void add(BaccaratCard card) {
-        hand[cardCount] = card;
-        cardCount++;
+        hand[cardCount++] = card;
     }
 
     public int value(){
